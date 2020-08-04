@@ -1,0 +1,150 @@
+.users {
+    padding: 50px 0;
+
+    .wrapper {
+        width: 60%;
+    }
+
+    h2 {
+        padding-bottom: 30px;
+        @include textcharacteristics($black, 30px, 500, capitalize);
+        font-family: 'brusher';
+        text-align: center;
+    }
+
+    #add-user {
+        padding: 10px 15px;
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;
+        margin-bottom: 10px;
+        @include textcharacteristics($black, 15px, 800, uppercase);
+        background-color: $secondaryColor;
+
+        &:hover {
+            background-color: transparentize($secondaryColor, 0.2
+            );
+        }
+    }
+
+    .headings {
+        background-color: rgb(0, 156, 135);
+
+        & > span:first-child  {
+            width: 15%;
+        }
+
+        & > span:nth-child(2)  {
+            width: 65%;
+        }
+
+        & > span:last-child  {
+            width: 20%;
+        }
+
+        span {
+            padding: 20px  10px;
+            text-align: center;
+            @include textcharacteristics($white, 15px, 800, uppercase);
+            box-sizing: border-box;
+        }
+    }
+
+    li {
+        width: 100%;
+        @include flex(nowrap, row, flex-start, center, center);
+        @include textcharacteristics($black, 15px, 600, uppercase);
+        box-sizing: border-box;
+
+        & > span:first-child  {
+            width: 15%;
+            text-align: center;
+        }
+
+        & > div:nth-child(2)  {
+            width: 65%;
+            padding-left: 30px;
+            box-sizing: border-box;
+            
+            span {
+                display: block;
+
+                &:nth-child(2) {
+                    text-transform: lowercase;
+                }
+            }
+        }
+
+        & > div:last-child  {
+            width: 20%;
+            @include flex(nowrap, row, center, center, center );
+        }
+
+        &:not(:first-child) {
+            padding: 10px 0;
+            border-bottom: 1px solid $secondaryColor;
+        }
+    }
+
+    
+
+    .edit {
+        display: block;
+        width: 30px;
+        height: 25px;
+        padding-top: 4px;
+        border-radius: 5px;
+        margin: 3px;
+        @include flex(nowrap, row, center, center, center );
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+
+        &::before {
+            content: "\f044";
+            font-family: "fontAwesome";
+            text-indent: 0;
+            font-size: 20px;
+            color: #000;
+            transition: 0.2s ease-in-out;
+        }
+
+        &:hover {
+            background-color: red;
+            &::before {
+                color: $white;
+            }
+        }
+    }
+
+    .delete {
+        display: block;
+        width: 30px;
+        height: 29px;
+        border-radius: 5px;
+        margin: 3px;
+        @include flex(nowrap, row, center, center, center );
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+
+        &::before {
+            content: "\f1f8";
+            font-family: "fontAwesome";
+            text-indent: 0;
+            font-size: 20px;
+            color: #000;
+            transition: 0.2s ease-in-out;
+        }
+
+        &:hover {
+            background-color: red;
+            &::before {
+                color: $white;
+            }
+        }
+    }
+
+    .users-list {
+        display: none;
+
+        &.active { display: block;}
+    }
+}
